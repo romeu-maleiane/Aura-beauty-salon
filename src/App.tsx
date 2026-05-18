@@ -40,22 +40,37 @@ export default function App() {
         {/* Minimalist Top Navigation */}
         <header className="absolute top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-screen-xl z-20 flex justify-between items-center px-2 md:px-4 py-2">
           {/* Logo */}
-          <div className="flex flex-1 items-center pl-2 text-white">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-1 items-center pl-2 text-white"
+          >
             <span className="text-lg md:text-xl font-medium tracking-tight">
               <span className="font-light opacity-90">Aura</span>Beauty
             </span>
-          </div>
+          </motion.div>
 
           {/* Navigation */}
-          <nav className="hidden lg:flex flex-none items-center gap-8 px-8 py-3.5 bg-white text-black rounded-full shadow-lg">
+          <motion.nav 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden lg:flex flex-none items-center gap-8 px-8 py-3.5 bg-white text-black rounded-full shadow-lg"
+          >
             <a href="#" className="text-[10px] xl:text-xs font-semibold uppercase tracking-[0.15em] opacity-70 hover:opacity-100 transition-opacity">About Us</a>
             <a href="#" className="text-[10px] xl:text-xs font-semibold uppercase tracking-[0.15em] opacity-70 hover:opacity-100 transition-opacity">Our Services</a>
             <a href="#" className="text-[10px] xl:text-xs font-semibold uppercase tracking-[0.15em] opacity-70 hover:opacity-100 transition-opacity">Our Client's</a>
             <a href="#" className="text-[10px] xl:text-xs font-semibold uppercase tracking-[0.15em] opacity-70 hover:opacity-100 transition-opacity">Contacts</a>
-          </nav>
+          </motion.nav>
 
           {/* Action */}
-          <div className="flex flex-1 justify-end items-center">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-1 justify-end items-center"
+          >
             <button className="hidden md:flex items-center gap-3 bg-white/20 border border-white/20 backdrop-blur-md text-white pl-6 pr-2 py-2 rounded-full hover:bg-white/30 transition-all">
               <span className="text-[10px] font-semibold uppercase tracking-widest pl-1">Book Now</span>
               <div className="bg-white text-black p-1.5 rounded-full">
@@ -63,7 +78,7 @@ export default function App() {
               </div>
             </button>
             <button className="md:hidden text-[10px] font-semibold uppercase tracking-[0.15em] text-white bg-white/20 px-4 py-2 rounded-full backdrop-blur-md">Menu</button>
-          </div>
+          </motion.div>
         </header>
 
         {/* Hero Content */}
@@ -528,7 +543,7 @@ function RevealTitle({ text, className, as: Component = "h2", delay = 0 }: { tex
                         visible: { 
                           y: "0%", 
                           opacity: 1,
-                          transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+                          transition: { duration: 1.5, ease: [0.16, 1, 0.3, 1] } 
                         }
                       }}
                       className="inline-block"
@@ -581,7 +596,7 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px" }}
-      transition={{ duration: 1, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 2, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}
@@ -591,13 +606,13 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
 
 function InfoCard({ label, title, imageSrc }: { label: string, title: React.ReactNode, imageSrc: string }) {
   return (
-    <div className="group flex flex-col h-full bg-white hover:bg-zinc-50 transition-colors duration-500 cursor-pointer">
+    <Reveal className="group flex flex-col h-full bg-white hover:bg-zinc-50 transition-colors duration-500 cursor-pointer">
       <div className="p-5 md:p-6 lg:p-8 flex-1 flex flex-col justify-between">
         <div className="flex justify-between items-start mb-8 lg:mb-10">
           <span className="text-[9px] md:text-[10px] lg:text-xs uppercase tracking-widest font-medium opacity-80">{label}</span>
           <ArrowUpRight className="w-3.5 h-3.5 lg:w-4 lg:h-4 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
         </div>
-        <h3 className="text-lg md:text-xl lg:text-[1.35rem] leading-[1.2] font-medium tracking-tight pb-1">
+        <h3 className="text-lg md:text-xl lg:text-[1.35rem] leading-[1.2] font-medium tracking-tight pb-1 text-black">
           {title}
         </h3>
       </div>
@@ -609,7 +624,7 @@ function InfoCard({ label, title, imageSrc }: { label: string, title: React.Reac
             referrerPolicy="no-referrer" 
          />
       </div>
-    </div>
+    </Reveal>
   );
 }
 
