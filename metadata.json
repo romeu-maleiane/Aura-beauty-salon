@@ -1,6 +1,6 @@
 {
-  "name": "Aura Black & White Beauty Salon",
-  "description": "Minimalist beauty salon landing page with black and white aesthetic",
+  "name": "Aura Lisboa - Salão de Beleza de Luxo",
+  "description": "Website oficial do Aura Lisboa no Chiado, oferecendo tratamentos exclusivos de cabelo, estética e bem-estar com um design minimalista e sofisticado.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
