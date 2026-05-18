@@ -510,7 +510,7 @@ function RevealTitle({ text, className, as: Component = "h2", delay = 0 }: { tex
         className="block"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-10%" }}
+        viewport={{ once: true, margin: "0px" }}
         variants={{
           visible: { transition: { staggerChildren: 0.03, delayChildren: delay } }
         }}
@@ -580,7 +580,7 @@ function Reveal({ children, delay = 0, className = "" }: { children: React.React
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10%" }}
+      viewport={{ once: true, margin: "0px" }}
       transition={{ duration: 1, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
